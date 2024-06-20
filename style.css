@@ -1,16 +1,84 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "poppins", sans-serif;
 }
-
-.signup {
-    width: 40vw;
+body {
+    background-color: #f5f5f5;
+}
+.acc {
+    padding: 20px 0 0 0;
+    background-color: white;
+    width: 80vw;
     top: 50%;
     left: 50%;
     position: absolute;
-    background-color: bisque;
+    border-radius: 10px;
     transform: translate(-50%,-50%);
 }
-.signup h1 {
+
+.signup {
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.label img {
+    width: 300px;
+}
+.info {
+    width: 50%;
+}
+.info input{
+    border: 0;
+}
+.input, .logo {
+    padding: 30px 0 10px 0;
+}
+.info input, button, .input label, .signlog p {
+    font-size: 16px;
+}
+.input label {
+    padding-right: 20px;
+}
+
+.line {
+    height: 2px;
+    background-color: black;
+}
+button {
+    border-radius: 5px;
+    padding: 5px 30px;
+    display: block;
+    margin: 45px auto 0 auto;
+    color: white;
+    background: black;
+    border: 0;
+    cursor: pointer;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.signlog {
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 40px;
+    margin: 10px 20px ;
+    background-color: black;
+}
+.signlog p {
     text-align: center;
+    max-width: ;
+}
+@media screen and (max-width: 1000px){
+    .label {
+        display: none;
+    }
+    .info {
+        width: 100%;
+    }
 }
