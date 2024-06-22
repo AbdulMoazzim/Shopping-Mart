@@ -30,6 +30,7 @@ body {
     width: 50%;
 }
 .info input{
+    padding: 5px 20px;
     border: 0;
 }
 .input, .logo {
