@@ -1,6 +1,6 @@
 let header = `<header>
         <div class="Logo">
-            <img src="FASCO.png" alt="Logo">
+            <img src="../Images/FASCO.png" alt="Logo">
         </div>
         <div class="nav">
             <nav>
