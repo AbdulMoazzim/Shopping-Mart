@@ -27,7 +27,8 @@ header{
     text-decoration: none;
     color: black;
 }
-.homea {
+.homeA {
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3,26vw);
 }
@@ -37,7 +38,7 @@ header{
     width:300px;
 }
 .home2 img {
-    width: 200px;
+    width: 370px;
 }
 
 .home2{
@@ -47,7 +48,23 @@ header{
     align-items: center;
 }
 
-.homeb{
+#p1 {
+    color: #484848; 
+    font-size: 56px; 
+    font-weight: bold; 
+}
+#p2 {
+    color: gray; 
+    font-size: 94px;  
+    font-weight: bold;
+}
+#p3 {
+    color:gray; 
+    font-size:18px;
+}
+
+.homeB {
+    padding: 30px 0;
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -55,5 +72,5 @@ header{
     width: 80vw;
 }
 .homeb img {
-    width: 125px;
+    width: 1709px;
 }
