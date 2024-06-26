@@ -1,3 +1,7 @@
+main {
+    margin: auto;
+    width: 80vw;
+}
 .homeA {
     margin-top: 50px;
     display: grid;
