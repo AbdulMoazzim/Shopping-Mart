@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "poppins", sans-serif;
+}
+body {
+    width:80vw;
+    margin:auto
+}
+header{
+    padding: 30px 0;
+    display:flex;
+    justify-content: space-between;
+}
+.nav nav ul {
+    display: flex;
+    color: black;
+    justify-content: space-around;
+    width: 40vw;
+}
+.nav nav ul li {
+    list-style: none;
+    color: black;
+    margin-top: 25px;
+}
+.nav nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+.homea {
+    display: grid;
+    grid-template-columns: repeat(3,26vw);
+}
+.home1 img,.home3 img {
+    display: block;
+    margin: auto;
+    width:300px;
+}
+.home2 img {
+    width: 200px;
+}
+
+.home2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeb{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    width: 80vw;
+}
+.homeb img {
+    width: 125px;
+}

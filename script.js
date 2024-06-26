@@ -104,7 +104,7 @@ function listener2() {
       JSON.stringify(user.value) == i &&
       JSON.stringify(pass.value) == info[i]
     ) {
-      window.location.href = 'store.html';
+      window.location.href = 'Store/homepage.html';
       return;
     }
   }
