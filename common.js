@@ -5,7 +5,7 @@ let header = `<header>
         <div class="nav">
             <nav>
                 <ul>
-                    <li><a href>Home </a></li>
+                    <li><a href="../Store/homepage.html">Home </a></li>
                     <li><a href>Deals</a></li>
                     <li><a href>New&nbsp;Arrivals</a></li>
                     <li><a href>Packages </a></li>

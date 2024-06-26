@@ -1,30 +1,29 @@
-h1 {
-    margin-top: 40px;
-}
+
 .main {
-    margin-top: 40px;
     width: 100vw;
     display: flex;
     justify-content: space-around;
-    position: relative;
+}
+.heading {
+    text-align: center;
+    font-size: 50px;
+    margin: 50px 0;
 }
 .sidebar {
-    left: 0;
     width: 30vw;
     height: 100vh;
-    position: fixed;
 }
 .content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    left: 30%;
-    position: absolute;
     width: 70vw;
+    margin-bottom: 40px;
 }
 .card {
-    padding: 10px;
+    cursor: pointer;
     width: 20vw;
+    margin: 20px;
 }
 .img img {
     display: block;
@@ -41,4 +40,18 @@ h1 {
     font-weight: 700;
     font-size: 20px;
     padding-top: 15px;
+}
+
+.sidebar h3 {
+    cursor: pointer;
+    padding: 0 0 12px 42px;
+    font-size: 30px;
+}
+.sidebar ul li {
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0 0 6px 66px;
+}
+.sidebar ul {
+    padding-bottom: 20px;
 }
