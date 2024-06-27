@@ -12,6 +12,7 @@
 .sidebar {
     width: 30vw;
     height: 100vh;
+    border-right: 2px solid rgb(177, 177, 177);
 }
 .content {
     display: flex;

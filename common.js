@@ -12,6 +12,7 @@ let header = `<header>
                 </ul>
             </nav>
         </div>
-    </header>`
+    </header>
+    <div class="header_border"></div>`
 
 document.body.insertAdjacentHTML('afterbegin',header)
