@@ -53,6 +53,11 @@
     font-size: 22px;
     padding: 0 0 6px 66px;
 }
-.sidebar ul {
-    padding-bottom: 20px;
+.list {
+    overflow: hidden;
+    height: 0;
+    transition: height 1s linear;
+}
+.open {
+    height: 100px;
 }
