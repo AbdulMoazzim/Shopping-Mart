@@ -1,0 +1,63 @@
+
+.main {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.heading {
+    text-align: center;
+    font-size: 50px;
+    margin: 50px 0;
+}
+.sidebar {
+    width: 30vw;
+    height: 100vh;
+    border-right: 2px solid rgb(177, 177, 177);
+}
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin-bottom: 40px;
+}
+.card {
+    cursor: pointer;
+    width: 20vw;
+    margin: 20px;
+}
+.img img {
+    display: block;
+    width: 75%;
+    margin: auto;
+}
+.info {
+    padding-left: 30px;
+}
+#type {
+    padding-top: 30px;
+}
+.info p{
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.sidebar h3 {
+    cursor: pointer;
+    padding: 0 0 12px 42px;
+    font-size: 30px;
+}
+.sidebar ul li {
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0 0 6px 66px;
+}
+.list {
+    overflow: hidden;
+    height: 0;
+    transition: height 1s linear;
+}
+.open {
+    height: 70px;
+}

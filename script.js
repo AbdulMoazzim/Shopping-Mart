@@ -2,8 +2,9 @@ let lis1 = document.querySelector(".sign");
 let lis2 = document.querySelector(".log");
 let info = localStorage;
 
-lis1.addEventListener("click", () => {
-  let html1 = `<div class="signup">
+class signup_login {
+  createSignUp(listener1) {
+    let html1 = `<div class="signup">
             <div class="label">
                 <img src="Images/label.png" alt="label">
             </div>
@@ -36,36 +37,47 @@ lis1.addEventListener("click", () => {
   document.querySelector(".acc").insertAdjacentHTML("beforeend", html1);
   let acc1 = document.querySelector("#accSign");
   acc1.addEventListener("click", listener1);
+  }
+
+  createLogIn(listener2) {
+        let html1 = `<div class="signup">
+        <div class="label">
+            <img src="Images/label.png" alt="label">
+        </div>
+        <div class="info">
+            <div class="logo">
+                <img src="Images/FASCO.png" alt="logo">
+            </div>
+            <form>
+                <div class="input">
+                    <label for="user">UserName</label>
+                    <input type="text" id="user" required>
+                </div>
+                <div class="line"></div>
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="line"></div>
+            </form>
+            <button id="accLog">Log In</button>
+
+        </div>
+    </div>`;
+    document.querySelector(".signup").remove();
+    document.querySelector(".acc").insertAdjacentHTML("beforeend", html1);
+    let acc2 = document.querySelector("#accLog");
+    acc2.addEventListener("click", listener2);
+  }
+}
+
+let account = new signup_login()
+
+lis1.addEventListener("click", () => {
+  account.createSignUp(listener1)
 });
 lis2.addEventListener("click", () => {
-  let html1 = `<div class="signup">
-            <div class="label">
-                <img src="Images/label.png" alt="label">
-            </div>
-            <div class="info">
-                <div class="logo">
-                    <img src="Images/FASCO.png" alt="logo">
-                </div>
-                <form>
-                    <div class="input">
-                        <label for="user">UserName</label>
-                        <input type="text" id="user" required>
-                    </div>
-                    <div class="line"></div>
-                    <div class="input">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" required>
-                    </div>
-                    <div class="line"></div>
-                </form>
-                <button id="accLog">Log In</button>
-
-            </div>
-        </div>`;
-  document.querySelector(".signup").remove();
-  document.querySelector(".acc").insertAdjacentHTML("beforeend", html1);
-  let acc2 = document.querySelector("#accLog");
-  acc2.addEventListener("click", listener2);
+  account.createLogIn(listener2)
 });
 
 function listener1() {

@@ -30,6 +30,7 @@ body {
     width: 50%;
 }
 .info input{
+    width: 300px;
     padding: 5px 20px;
     border: 0;
 }
@@ -73,7 +74,6 @@ button {
 }
 .signlog p {
     text-align: center;
-    max-width: ;
 }
 @media screen and (max-width: 1000px){
     .label {
@@ -82,7 +82,15 @@ button {
     .info {
         width: 100%;
     }
+<<<<<<< HEAD
 }
 .TEXTS{
     line-height: 31.6px;
+=======
+    .input input {
+        width: 100px;
+    }.line {
+        margin-right: 18px;
+    }
+>>>>>>> 96377ff9eac86b03025007283e38ce4a326b3f5e
 }
