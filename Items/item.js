@@ -64,7 +64,7 @@ let products = [[{image: "cargopants/grey.jfif", type: "Grey Cargo", price: "Rs.
 
 let links = document.body.querySelectorAll('.products')
 Array.from(links).forEach((val,index)=> {
-    val.addEventListener('click', (e)=> {
+    val.addEventListener('click', ()=> {
         document.body.querySelector('.heading').innerHTML = val.innerHTML;
         document.body.querySelector('.content').innerHTML = '';
         for (let i = 0; i < products[index].length; i ++) {
@@ -79,6 +79,5 @@ Array.from(links).forEach((val,index)=> {
             </div>`;
             document.body.querySelector('.content').insertAdjacentHTML('beforeend',html);
         }
-        e.preventDefault()
     })
 })
