@@ -49,36 +49,3 @@ main {
 .homeb img {
     width: 1709px;
 }
-.card {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30vw;
-
-}
-.card img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    width: 100%;
-    height: auto;
-}
-
-.card-title {
-    font-size: 1.25rem;
-}
-.fa-star.checked {
-    color: yellow;
-}
-.card-text {
-    color: grey;
-    
-}
-.card-text.bold {
-    font-weight: bold;
-    color: rgb(111, 107, 107);
-    font-size: 28px;
-}
-.card-text.sold-out {
-    color: red;
-}
