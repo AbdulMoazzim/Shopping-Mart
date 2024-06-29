@@ -61,3 +61,12 @@
 .open {
     height: 70px;
 }
+
+@media screen and (max-width: 760px) {
+    .sidebar h3, .sidebar ul li {
+        font-size: 18px;
+    }
+    .sidebar ul li {
+        padding: 0 0 6px 40px;
+    }
+}

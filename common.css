@@ -39,3 +39,9 @@ footer {
     align-items: center;
     background-color: rgb(177, 177, 177);
 }
+
+@media screen and (max-width: 760px) {
+    .Logo img {
+        width: 240px;
+    }
+}

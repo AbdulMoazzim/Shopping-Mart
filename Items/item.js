@@ -25,7 +25,7 @@ let products = [[{image: "cargopants/grey.jfif", type: "Grey Cargo", price: "Rs.
     {image: "Perfumes/per3.jfif", type: "Sauvage Perfumes", price: "Rs. 2500"},
     {image: "Perfumes/per4.jfif", type: "Glamour Perfumes", price: "Rs. 1200"},
     {image: "Perfumes/per5.jfif", type: "Scent N Stories Perfumes", price: "Rs. 850"},
-],[{image: "Hoodies/hood1.webp", type: "Navy Hoody", price: "Rs. 1800"},
+],[{image: "Hoodies/hood1.jfif", type: "Navy Hoody", price: "Rs. 1800"},
     {image: "Hoodies/hood2.jfif", type: "Purple Hoody", price: "Rs. 1800"},
     {image: "Hoodies/hood3.jfif", type: "Brown Hoody", price: "Rs. 1800"},
     {image: "Hoodies/hood4.jfif", type: "Black Hoody", price: "Rs. 1800"},
@@ -61,3 +61,24 @@ let products = [[{image: "cargopants/grey.jfif", type: "Grey Cargo", price: "Rs.
     {image: "Jewellery/necklace3.jpg", type: "Gold Necklace", price: "Rs. 18000"},
 ],
 ]
+
+let links = document.body.querySelectorAll('.products')
+Array.from(links).forEach((val,index)=> {
+    val.addEventListener('click', (e)=> {
+        document.body.querySelector('.heading').innerHTML = val.innerHTML;
+        document.body.querySelector('.content').innerHTML = '';
+        for (let i = 0; i < products[index].length; i ++) {
+            let html = `<div class="card">
+                <div class="img">
+                    <img src="../Images/${products[index][i].image}" alt="${products[index][i].type}">
+                </div>
+                <div class="info">
+                    <p id="type">${products[index][i].type}</p>
+                    <p>${products[index][i].price}</p>
+                </div>
+            </div>`;
+            document.body.querySelector('.content').insertAdjacentHTML('beforeend',html);
+        }
+        e.preventDefault()
+    })
+})
