@@ -1,9 +1,3 @@
-let pant = document.querySelector('.pants')
-let pantType = document.querySelector('.list')
-pant.addEventListener('click', ()=> {
-    pantType.classList.toggle('open')
-})
-
 let products = [[{image: "cargopants/grey.jfif", type: "Grey Cargo", price: "Rs. 1600"},
     {image: "cargopants/white.jfif", type: "White Cargo", price: "Rs. 1600"},
     {image: "cargopants/offwhitecargo.jfif", type: "Off White Cargo", price: "Rs. 1600"},
@@ -68,15 +62,21 @@ Array.from(links).forEach((val,index)=> {
         document.body.querySelector('.heading').innerHTML = val.innerHTML;
         document.body.querySelector('.content').innerHTML = '';
         for (let i = 0; i < products[index].length; i ++) {
-            let html = `<div class="card">
-                <div class="img">
-                    <img src="../Images/${products[index][i].image}" alt="${products[index][i].type}">
-                </div>
-                <div class="info">
-                    <p id="type">${products[index][i].type}</p>
-                    <p>${products[index][i].price}</p>
-                </div>
-            </div>`;
+            let html = `<div class="card" style="width: 18rem">
+          <img
+            src="../Images/${products[index][i].image}"
+            class="card-img-top"
+            alt="${products[index][i].type}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">${products[index][i].type}</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>`;
             document.body.querySelector('.content').insertAdjacentHTML('beforeend',html);
         }
     })

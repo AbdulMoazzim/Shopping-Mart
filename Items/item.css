@@ -11,7 +11,6 @@
 }
 .sidebar {
     width: 30vw;
-    height: 100vh;
     border-right: 2px solid rgb(177, 177, 177);
 }
 .content {
@@ -21,52 +20,58 @@
     width: 70vw;
     margin-bottom: 40px;
 }
+
 .card {
-    cursor: pointer;
-    width: 20vw;
-    margin: 20px;
-}
-.img img {
-    display: block;
-    width: 75%;
-    margin: auto;
-}
-.info {
-    padding-left: 30px;
-}
-#type {
-    padding-top: 30px;
-}
-.info p{
-    font-weight: 700;
-    font-size: 20px;
-    padding-top: 15px;
+    margin-top: 20px;
 }
 
 .sidebar h3 {
     cursor: pointer;
-    padding: 0 0 12px 42px;
+    margin-left: 30px;
+}
+.sidebar h3 {
     font-size: 30px;
 }
-.sidebar ul li {
-    cursor: pointer;
-    font-size: 22px;
-    padding: 0 0 6px 66px;
-}
+
 .list {
     overflow: hidden;
     height: 0;
     transition: height 1s linear;
 }
-.open {
-    height: 70px;
-}
+
 
 @media screen and (max-width: 760px) {
-    .sidebar h3, .sidebar ul li {
+    .sidebar h3{
         font-size: 18px;
     }
-    .sidebar ul li {
-        padding: 0 0 6px 40px;
+    .heading {
+        margin: 0 0 50px 0;
+    }
+}
+@media screen and (max-width: 460px) {
+    .sidebar h3 {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        position: relative;
+        border: 0;
+    }
+    .sidebar h1 {
+        display: none;
+    }
+    .pro {
+        display: grid;
+        grid-template-columns: repeat(2, 40vw);
+        left: -86px;
+        top: -20px;
+        position: absolute;
+    }
+    .material {
+        margin-top: 100px;
     }
 }
