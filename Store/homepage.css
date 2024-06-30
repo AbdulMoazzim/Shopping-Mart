@@ -52,12 +52,28 @@ main {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
-    margin-right: 20px;
-    margin-bottom: 31px;
+    justify-content: space-around;
 }
 .star{
     color: gold;
     font-size: 24px;
     margin-inline: -4px;
+}
+.card {
+    margin-bottom: 30px;
+}
+.price {
+    font-size: 24px; 
+    font-weight: bold;
+    padding-right: 60px;
+}
+.review {
+    color:red; 
+    text-align: right;
+}
+.review,.price {
+    display: inline;
+}
+.card-text {
+    color:rgb(95, 92, 92);
 }
