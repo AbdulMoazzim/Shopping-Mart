@@ -27,7 +27,7 @@ header{
     z-index: 4;
     background: rgb(177, 177, 177);
 }
-.header_border {
+#header_border {
     border-bottom: 2px solid rgb(177, 177, 177);
 }
 .nav nav ul, .transist nav ul{
