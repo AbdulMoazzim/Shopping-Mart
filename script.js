@@ -97,24 +97,23 @@ function listener1() {
     alert("Provide All Credentials to Create an account!")
     return;
   }
-  console.log(info.length)
-  if (info.length != 0) {
-    for (let i in info) {
-      let parse1 = JSON.parse(info[i]);
-      if (user.value == parse1.Username) {
+  for (let i = 0; i < info.length; i++) {
+    let key = info.key(i);
+    let parse1 = JSON.parse(info.getItem(key));
+    if (user.value == parse1.Username) {
         user.value = "";
         FullName.value = "";
         pass.value = "";
         alert("User Name not available");
         return;
-      }
     }
-  }
-  localStorage.setItem(JSON.stringify(i), JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false}));
-  alert("Account Created");
+}
+  let id = new Date().getTime()
+  localStorage.setItem(id, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false}));
   user.value = "";
   FullName.value = "";
   pass.value = "";
+  alert("Account Created");
   return;
 }
 function listener2() {
@@ -125,14 +124,15 @@ function listener2() {
     alert("Provide All Credentials to Log in!")
     return;
   }
-  for (let i in info) {
-    let parse2 = JSON.parse(info[i]);
+  for (let i = 0; i < info.length; i++) {
+    let key = info.key(i);
+    let parse2 = JSON.parse(info.getItem(key));
     if (
       user.value == parse2.Username &&
       pass.value == parse2.Password
     ) {
-      let conditionForLog = true;
-      localStorage.setItem(JSON.stringify(`user${info.length+1}`), JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: conditionForLog}));
+      parse2.condition = true;
+      localStorage.setItem(key, JSON.stringify(parse2));
       window.location.href = 'Store/homepage.html';
       return;
     }

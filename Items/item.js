@@ -70,10 +70,7 @@ Array.from(links).forEach((val,index)=> {
           />
           <div class="card-body">
             <h5 class="card-title">${products[index][i].type}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">${products[index][i].price}</p>
             <button class="btn btn-primary">Add to Cart</button>
           </div>
         </div>`;
