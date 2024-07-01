@@ -50,6 +50,11 @@ class signup_login {
             </div>
             <form>
                 <div class="input">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="line"></div>
+                <div class="input">
                     <label for="user">UserName</label>
                     <input type="text" id="user" required>
                 </div>
@@ -81,30 +86,39 @@ lis2.addEventListener("click", () => {
 });
 
 function listener1() {
-  let Name = document.querySelector("#name");
+  let FullName = document.querySelector("#name");
   let pass = document.querySelector("#password");
+  if (pass.value.length < 8) {
+    alert("Password's length should be greater than 8 characters");
+    return
+  }
   let user = document.querySelector("#user");
-  if (user.value === "" || Name.value === "" || pass.value === ""){
+  if (user.value === "" || FullName.value === "" || pass.value === ""){
     alert("Provide All Credentials to Create an account!")
     return;
   }
-  for (let i in info) {
-    if (JSON.stringify(user.value) == i) {
-      user.value = "";
-      Name.value = "";
-      pass.value = "";
-      alert("User Name not available");
-      return;
+  console.log(info.length)
+  if (info.length != 0) {
+    for (let i in info) {
+      let parse1 = JSON.parse(info[i]);
+      if (user.value == parse1.Username) {
+        user.value = "";
+        FullName.value = "";
+        pass.value = "";
+        alert("User Name not available");
+        return;
+      }
     }
   }
-  localStorage.setItem(JSON.stringify(user.value), JSON.stringify(pass.value));
+  localStorage.setItem(JSON.stringify(i), JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false}));
   alert("Account Created");
   user.value = "";
-  Name.value = "";
+  FullName.value = "";
   pass.value = "";
   return;
 }
 function listener2() {
+  let FullName = document.querySelector("#name");
   let pass = document.querySelector("#password");
   let user = document.querySelector("#user");
   if (user.value === "" || pass.value === ""){
@@ -112,14 +126,18 @@ function listener2() {
     return;
   }
   for (let i in info) {
+    let parse2 = JSON.parse(info[i]);
     if (
-      JSON.stringify(user.value) == i &&
-      JSON.stringify(pass.value) == info[i]
+      user.value == parse2.Username &&
+      pass.value == parse2.Password
     ) {
+      let conditionForLog = true;
+      localStorage.setItem(JSON.stringify(`user${info.length+1}`), JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: conditionForLog}));
       window.location.href = 'Store/homepage.html';
       return;
     }
   }
+  FullName.value = "";
   user.value = "";
   pass.value = "";
   alert("Invalid credentials");
