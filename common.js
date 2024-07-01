@@ -6,24 +6,22 @@ let header = `<header>
             <nav>
                 <ul>
                     <li><a href="../Store/homepage.html">Home </a></li>
-                    <li><a href>Deals</a></li>
-                    <li><a href>New&nbsp;Arrivals</a></li>
-                    <li><a href>Packages </a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="../Items/item.html">Products</a></li>
                 </ul>
             </nav>
         </div>
         <span class="material-symbols-outlined" id="ham">menu</span>
     </header>
-    <div class="header_border"></div>
+    <div id="header_border"></div>
     </header>
     <div class="header transformA">
         <div class="transist">
             <nav>
                 <ul>
                     <li><a href="../Store/homepage.html">Home </a></li>
-                    <li><a href>Deals</a></li>
-                    <li><a href>New&nbsp;Arrivals</a></li>
-                    <li><a href>Packages </a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="../Items/items.html">Products</a></li>
                 </ul>
             </nav>
         </div>

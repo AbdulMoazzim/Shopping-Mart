@@ -10,7 +10,7 @@
     margin: 50px 0;
 }
 .sidebar {
-    width: 30vw;
+    width: 25vw;
     border-right: 2px solid rgb(177, 177, 177);
 }
 .content {
@@ -24,7 +24,10 @@
 .card {
     margin-top: 20px;
 }
-
+.card-text {
+    font-size: 22px;
+    font-weight: 600;
+}
 .sidebar h3 {
     cursor: pointer;
     margin-left: 30px;
@@ -32,7 +35,9 @@
 .sidebar h3 {
     font-size: 30px;
 }
-
+.sidebar h3:hover {
+    color: brown;
+}
 .list {
     overflow: hidden;
     height: 0;
@@ -48,9 +53,9 @@
         margin: 0 0 50px 0;
     }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 670px) {
     .sidebar h3 {
-        font-size: 12px;
+        font-size: 16px;
         margin-left: 10px;
     }
     .main {
@@ -60,6 +65,7 @@
     .sidebar {
         position: relative;
         border: 0;
+        margin-bottom: 20px;
     }
     .sidebar h1 {
         display: none;

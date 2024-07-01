@@ -30,7 +30,7 @@ body {
     width: 50%;
 }
 .info input{
-    width: 300px;
+    width: 200px;
     padding: 5px 20px;
     border: 0;
 }
@@ -88,3 +88,4 @@ button {
         margin-right: 18px;
     }
 }
+/* localStorage.setItem(`user${info.length+1}`, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false})); */
