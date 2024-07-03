@@ -50,11 +50,6 @@ class signup_login {
             </div>
             <form>
                 <div class="input">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="line"></div>
-                <div class="input">
                     <label for="user">UserName</label>
                     <input type="text" id="user" required>
                 </div>
@@ -109,7 +104,7 @@ function listener1() {
     }
 }
   let id = new Date().getTime()
-  localStorage.setItem(id, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false}));
+  localStorage.setItem(id, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false, products:[]}));
   user.value = "";
   FullName.value = "";
   pass.value = "";
@@ -117,7 +112,6 @@ function listener1() {
   return;
 }
 function listener2() {
-  let FullName = document.querySelector("#name");
   let pass = document.querySelector("#password");
   let user = document.querySelector("#user");
   if (user.value === "" || pass.value === ""){
@@ -137,7 +131,6 @@ function listener2() {
       return;
     }
   }
-  FullName.value = "";
   user.value = "";
   pass.value = "";
   alert("Invalid credentials");

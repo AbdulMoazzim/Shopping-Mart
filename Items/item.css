@@ -9,6 +9,13 @@
     font-size: 50px;
     margin: 50px 0;
 }
+#cart {
+    font-size: 32px;
+    padding: 20px 60px 0 0;
+    float: right;
+    font-size: 48px;
+    cursor: pointer;
+}
 .sidebar {
     width: 25vw;
     border-right: 2px solid rgb(177, 177, 177);
@@ -23,6 +30,8 @@
 
 .card {
     margin-top: 20px;
+    display: grid;
+    grid-template-rows:  subgrid;
 }
 .card-text {
     font-size: 22px;
