@@ -80,7 +80,7 @@ main {
 .price {
     font-size: 24px; 
     font-weight: bold;
-    padding-right: 60px;
+    padding-right: 30px;
 }
 .review {
     color:red; 
@@ -89,7 +89,7 @@ main {
 .review,.price {
     display: inline;
 }
-.card-text {
+.card-text,#CR,#CS {
     color:rgb(95, 92, 92);
 }
 .LS-Height {
@@ -97,46 +97,47 @@ main {
     justify-content: center;
     align-items: center;
 }
-
-#CUSTOMER{
+.customer {
+    align-items: center;
+    padding: 60px 0;
+}
+.customerReview {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contain,.customer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.contain {
+    padding-left: 30px;
+    align-items: flex-start;
+}
+#CUSTOMER,#CN,#CR{
     font-size: 35px;
     font-weight: bold;
-    padding-inline: 37px;
-    padding: 77px;
-}
-#CR{
-    color: gray;
-    padding-inline:37px;
-    margin:-82px;
-    margin-inline:70px;
-    font-size: 30px;
-}
-#CP{
-    margin-inline: 140px;
-    margin-block: 149px;
 }
 
 #CS{
-    color:gray;
     font-size: 24px;
     width: 200px;
-    word-wrap:normal;
-    margin-top: -407px;
-    margin-left:440px;
 }
 #STARS{
+    width: 300px;
     font-size: 24px;
-    margin-inline: 447px;
     color: goldenrod
 }
-#LINE{
-    width:45%;
-    margin-inline: 440px;
-    border: 1px solid black;
-    opacity: 30;
+footer{
+    width:80vw;
+    margin:auto;
+    padding: 30px 0;
+    display:flexbox;
+    justify-content: center;
 }
-#CN{
-    font-size: 32px;
-    font-weight: bold;
-    margin-inline: 447px;
+
+#SC, #IV, #CT, #CA, #BL, #FAQ{
+    width:50px;
+    padding-inline: 80px;
 }
