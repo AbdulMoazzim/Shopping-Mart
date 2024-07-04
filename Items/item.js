@@ -56,12 +56,17 @@ let products = [["Cargo Pants",{image: "cargopants/grey.jfif", type: "Grey Cargo
 ],
 ]
 
+let cartsItem = currentLogged();
+if (cartsItem.parsing) {
+    document.querySelector("#Quantity").innerHTML = cartsItem.parsing.products.length;
+} 
+
 let links = document.body.querySelectorAll('.products')
 Array.from(links).forEach((val,index)=> {
     val.addEventListener('click', ()=> {
         document.body.querySelector('.heading').innerHTML = val.innerHTML;
         document.body.querySelector('.content').innerHTML = '';
-        for (let i = 0; i < products[index].length; i ++) {
+        for (let i = 1; i < products[index].length; i ++) {
             let html = `<div class="card" style="width: 18rem">
           <img
             src="../Images/${products[index][i].image}"
@@ -84,22 +89,32 @@ let checkout = document.body.querySelector('#cart');
 checkout.addEventListener('click', ()=>{
     window.location.href = "../checkout/checkout.html"
 })
-let btn = document.body.querySelectorAll('.btn');
-let storage = localStorage;
-for (let i = 0; i < storage.length;i++){
-    let key = storage.key(i);
-    let parsing = JSON.parse(storage.getItem(key));
-    if (parsing.condition == true) {
-        break;
-    }
-}
-Array.from(btn).forEach(()=>{
-    for (let i = 0; i < products.length; i++){
-        if (document.querySelector(".heading") === products[i][0]) {
-            var prod1 = products[i];
-            break;
+function currentLogged() {
+    let storage = localStorage;
+    for (let i = 0; i < storage.length;i++){
+        var key = storage.key(i);
+        let parsing = JSON.parse(storage.getItem(key));
+        if (parsing.condition == true) {
+            return { key: key, parsing: parsing };
         }
     }
-    
-})
-    
+    return null;
+}
+let btn = document.body.querySelectorAll('.btn');
+Array.from(btn).forEach((val, index) => {
+  val.addEventListener('click', () => {
+    let array = currentLogged();
+    if (array.parsing) {
+      for (let i = 0; i < products.length; i++) {
+        if (document.querySelector(".heading").innerHTML === products[i][0]) {
+          let prod1 = products[i];
+          array.parsing.products = array.parsing.products || [];
+          array.parsing.products.push(prod1[index + 1]);
+          localStorage.setItem(array.key, JSON.stringify(array.parsing));
+          document.querySelector("#Quantity").innerHTML = array.parsing.products.length
+          break;
+        }
+      }
+    }
+  });
+});

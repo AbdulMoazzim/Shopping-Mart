@@ -104,7 +104,7 @@ function listener1() {
     }
 }
   let id = new Date().getTime()
-  localStorage.setItem(id, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false, products:[]}));
+  localStorage.setItem(id, JSON.stringify({Name: FullName.value, Username : user.value, Password: pass.value,condition: false, product:[], history:[]}));
   user.value = "";
   FullName.value = "";
   pass.value = "";

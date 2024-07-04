@@ -114,6 +114,7 @@ main {
 .contain {
     padding-left: 30px;
     align-items: flex-start;
+    width: 30vw;
 }
 #CUSTOMER,#CN,#CR{
     font-size: 35px;
