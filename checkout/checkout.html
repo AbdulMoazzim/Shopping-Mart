@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="stylesheet" href="../common/common.css">
+    <title>Shopping Mart</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>FASCO</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Cart items will be added here dynamically -->
+        </tbody>
+      </table>
+      <div class="total" id="cart-total">Total: Rs 0.00</div>
+      <button class="btn" onclick="checkout()">Checkout</button>
+    </div>
+    <script src="../common/common.js"></script>
+  </body>
+</html>
