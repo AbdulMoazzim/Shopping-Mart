@@ -76,8 +76,7 @@ bindClickEvents();
 function calculate(array) {
     let calculate = 0;
     for (let i = 0; i < array.parsing.product.length; i++) {
-        console.log("hello ")
-        calculate += Number.parseInt(array.parsing.product[i].price)
+        calculate += Number.parseInt(array.parsing.product[i].price);
     }
     document.querySelector('#cart-total').innerHTML = `Rs. ${calculate}`;
 }

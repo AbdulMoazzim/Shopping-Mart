@@ -69,6 +69,15 @@ header{
     border-color: black;
 }
 
+footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+}
+
 @media screen and (min-width: 990px) {
     .header {
         display: none;
