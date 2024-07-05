@@ -6,6 +6,7 @@
 }
 
 header{
+    height: 132px;
     width:80vw;
     margin:auto;
     padding: 30px 0;
@@ -46,7 +47,7 @@ header{
 .nav nav ul li,.transist nav ul li {
     list-style: none;
     color: black;
-    margin-top: 25px;
+    margin: 25px 0;
 }
 .nav nav ul li a, .transist nav ul li a {
     text-decoration: none;

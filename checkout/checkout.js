@@ -39,28 +39,45 @@ function displayProducts() {
         }
         let html = `<tr>
         <td id="type${i}">${uniqueProducts[i].type}</td>
-        <td>${uniqueProducts[i].price}</td>
+        <td>Rs. ${uniqueProducts[i].price}</td>
         <td class="quant">${count}</td>
         <td><span class="material-symbols-outlined bin">delete</span></td>
     </tr>`
     document.querySelector('#cart-items').insertAdjacentHTML('beforeend',html)
-    }
+    calculate(arrayA)
+}
 }
 displayProducts();
+
 var bin = document.querySelectorAll('.bin');
 
-Array.from(bin).forEach((val, index)=>{
-    val.addEventListener('click', ()=>{
-        let arrayB = currentLogged();
-        for (let i = 0; i < arrayB.parsing.product.length; i++){
-            if (document.querySelector(`#type${index}`).innerHTML === arrayB.parsing.product[i].type){
-                arrayB.parsing.product.splice(i,1);
-                break;
+function bindClickEvents() {
+    Array.from(bin).forEach((val, index) => {
+        val.addEventListener('click', () => {
+            let arrayB = currentLogged();
+            for (let i = 0; i < arrayB.parsing.product.length; i++) {
+                if (document.querySelector(`#type${index}`).innerHTML === arrayB.parsing.product[i].type) {
+                    arrayB.parsing.product.splice(i, 1);
+                    break;
+                }
             }
-        }
-        document.querySelector('#cart-items').innerHTML = '';
-        localStorage.setItem(arrayB.key, JSON.stringify(arrayB.parsing));
-        displayProducts();
-        bin = document.querySelectorAll('.bin');
-    })
-})
+            document.querySelector('#cart-items').innerHTML = '';
+            localStorage.setItem(arrayB.key, JSON.stringify(arrayB.parsing));
+            displayProducts();
+            bin = document.querySelectorAll('.bin');
+            bindClickEvents();
+            calculate(arrayB);
+        });
+    });
+}
+
+bindClickEvents();
+
+function calculate(array) {
+    let calculate = 0;
+    for (let i = 0; i < array.parsing.product.length; i++) {
+        console.log("hello ")
+        calculate += Number.parseInt(array.parsing.product[i].price)
+    }
+    document.querySelector('#cart-total').innerHTML = `Rs. ${calculate}`;
+}

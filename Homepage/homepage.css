@@ -35,7 +35,7 @@ main {
 }
 #p3 {
     color:gray; 
-    font-size:18px;
+    font-size:32px;
 }
 
 .homeB {
@@ -46,9 +46,7 @@ main {
     align-items: center;
     width: 80vw;
 }
-.homeb img {
-    width: 1709px;
-}
+
 .TEXTS {
     padding: 70px 0;
     display: flex;
@@ -56,15 +54,19 @@ main {
     align-items: center;
 }
 .p-color {
+    text-align: center;
+    padding: 20px 0;
     font-size: 28px;
     color: grey;
 }
 #para {
+    text-align: center;
     color:rgb(73, 69, 69);
     font-size: 48px;
     font-weight: 700;
 }
 .card-container {
+    margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -93,9 +95,13 @@ main {
     color:rgb(95, 92, 92);
 }
 .LS-Height {
+    margin: 65px 0;
     display:flex;
     justify-content: center;
     align-items: center;
+}
+.LS-Height img {
+    width: 14vw;
 }
 .customer {
     align-items: center;
@@ -114,7 +120,6 @@ main {
 .contain {
     padding-left: 30px;
     align-items: flex-start;
-    width: 30vw;
 }
 #CUSTOMER,#CN,#CR{
     font-size: 35px;
@@ -123,7 +128,6 @@ main {
 
 #CS{
     font-size: 24px;
-    width: 200px;
 }
 #STARS{
     width: 300px;
@@ -131,24 +135,63 @@ main {
     color: goldenrod
 }
 footer {
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-around;
 }
 
-
-.footer-list {
-    list-style-type: none;
-    display: flex;
-    font-size: 22px;
+@media screen and (max-width: 1300px){ 
+    .home1 img,.home3 img {
+        width: 240px;
+        
+    } 
+    .home2 img {
+        width: 230px;
+    }
+    .homeB {
+        overflow: hidden;
+    }
+    .homeB img {
+        padding: 0 20px;
+    }
 }
 
-.footer-list li {
-    margin:15px;
+@media screen and (max-width: 1300px){ 
+    #p1, #p2, #p3 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width: 1050px){ 
+    .home1 img,.home3 img {
+        display: none;
+    }
+    .home2 img {
+        width: 370px;
+    }
+    #p1, #p3 {
+        font-size: 48px;
+    }
+    #p2 {
+        font-size: 64px;
+    }
+    .customer {
+        display: none;
+    }
 }
 
-.footer-list li a {
-    text-decoration: none;
-    color: black;
+@media screen and (max-width: 450px){ 
+    .homeA {
+        margin: 0;
+    }
+    .home2 img {
+        width: 260px;
+        padding-bottom: 20px;
+    }
+    #p1, #p3 {
+        font-size: 22px;
+    }
+    #p2 {
+        font-size: 26px;
+    }
 }
