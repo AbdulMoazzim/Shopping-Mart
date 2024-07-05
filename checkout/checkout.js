@@ -12,30 +12,55 @@ function currentLogged() {
  let tData = `<tbody id="cart-items"></tbody>`;
 document.querySelector('#table').insertAdjacentHTML('beforeend',tData);
 
-let array = currentLogged()
-if (array !== null) {
-    let products = array.parsing.products;
-    let uniqueProducts = [];
+function displayProducts() {
+    let arrayA = currentLogged();
+    if (arrayA !== null) {
+        var uniqueProducts = [];
+        for (let i = 0; i < arrayA.parsing.product.length; i++) {
+            let found = false;
+            for (let j = 0; j < uniqueProducts.length; j++) {
+                if (arrayA.parsing.product[i].type === uniqueProducts[j].type) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                uniqueProducts.push(arrayA.parsing.product[i]);
+            }
+        }  
+    }
+    
+    for (let i = 0; i < uniqueProducts.length; i++) {
+        var count = 0;
+        for (let j =0; j < arrayA.parsing.product.length; j++) {
+            if(uniqueProducts[i].type === arrayA.parsing.product[j].type) {
+                count++;
+            }
+        }
+        let html = `<tr>
+        <td id="type${i}">${uniqueProducts[i].type}</td>
+        <td>${uniqueProducts[i].price}</td>
+        <td class="quant">${count}</td>
+        <td><span class="material-symbols-outlined bin">delete</span></td>
+    </tr>`
+    document.querySelector('#cart-items').insertAdjacentHTML('beforeend',html)
+    }
+}
+displayProducts();
+var bin = document.querySelectorAll('.bin');
 
-    for (let i = 0; i < products.length; i++) {
-        let found = false;
-        for (let j = 0; j < uniqueProducts.length; j++) {
-            if (products[i].type === uniqueProducts[j].type) {
-                found = true;
+Array.from(bin).forEach((val, index)=>{
+    val.addEventListener('click', ()=>{
+        let arrayB = currentLogged();
+        for (let i = 0; i < arrayB.parsing.product.length; i++){
+            if (document.querySelector(`#type${index}`).innerHTML === arrayB.parsing.product[i].type){
+                arrayB.parsing.product.splice(i,1);
                 break;
             }
         }
-        if (!found) {
-            uniqueProducts.push(products[i]);
-        }
-    }
-    array.parsing.products = uniqueProducts;
-    
-}
-
-let html = `<tr>
-    <td>${uniqueProducts[j].type}</td>
-    <td>${uniqueProducts[j].price}</td>
-    <td>${quant}</td>
-</tr>`
-document.querySelector('#cart-items').insertAdjacentHTML('beforeend',html)
+        document.querySelector('#cart-items').innerHTML = '';
+        localStorage.setItem(arrayB.key, JSON.stringify(arrayB.parsing));
+        displayProducts();
+        bin = document.querySelectorAll('.bin');
+    })
+})

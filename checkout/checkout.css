@@ -37,3 +37,9 @@ th {
 .btn:hover {
     background-color: #4cae4c;
 }
+.quant {
+    padding-left: 110px;
+}
+.bin {
+    cursor: pointer;
+}

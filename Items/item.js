@@ -56,10 +56,6 @@ let products = [["Cargo Pants",{image: "cargopants/grey.jfif", type: "Grey Cargo
 ],
 ]
 
-let cartsItem = currentLogged();
-if (cartsItem.parsing) {
-    document.querySelector("#Quantity").innerHTML = cartsItem.parsing.products.length;
-} 
 
 let links = document.body.querySelectorAll('.products')
 Array.from(links).forEach((val,index)=> {
@@ -108,13 +104,17 @@ Array.from(btn).forEach((val, index) => {
       for (let i = 0; i < products.length; i++) {
         if (document.querySelector(".heading").innerHTML === products[i][0]) {
           let prod1 = products[i];
-          array.parsing.products = array.parsing.products || [];
-          array.parsing.products.push(prod1[index + 1]);
+          array.parsing.product.push(prod1[index + 1]);
           localStorage.setItem(array.key, JSON.stringify(array.parsing));
-          document.querySelector("#Quantity").innerHTML = array.parsing.products.length
+          document.querySelector("#Quantity").innerHTML = array.parsing.product.length
           break;
         }
       }
     }
   });
 });
+
+let cartsItem = currentLogged();
+if (cartsItem.parsing != undefined) {
+    document.querySelector("#Quantity").innerHTML = cartsItem.parsing.product.length;
+} 
