@@ -10,7 +10,6 @@
   </head>
   <body>
     <div class="container">
-      <h2>FASCO</h2>
       <table id="table">
         <thead>
           <tr>
@@ -24,8 +23,10 @@
         
         </tbody>
       </table>
-      <!-- <div class="total" id="cart-total">Total: Rs 0.00</div>
-      <button class="btn" onclick="checkout()">Checkout</button> -->
+      <div class="total">
+        <h2 id="cart-total">Rs. 0</h2>
+        <button class="btn" onclick="checkout()">Checkout</button>
+      </div>
     </div>
     <script src="../common/common.js"></script>
     <script src="checkout.js"></script>

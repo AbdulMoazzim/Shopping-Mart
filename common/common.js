@@ -5,7 +5,7 @@ let header = `<header>
         <div class="nav" id="display">
             <nav>
                 <ul>
-                    <li><a href="../Store/homepage.html">Home </a></li>
+                    <li><a href="../Homepage/homepage.html">Home </a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="../Items/item.html">Products</a></li>
                 </ul>
@@ -19,7 +19,7 @@ let header = `<header>
         <div class="transist">
             <nav>
                 <ul>
-                    <li><a href="../Store/homepage.html">Home </a></li>
+                    <li><a href="../Homepage/homepage.html">Home </a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="../Items/item.html">Products</a></li>
                 </ul>
