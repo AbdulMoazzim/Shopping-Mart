@@ -21,7 +21,7 @@ let header = `<header>
                 <ul>
                     <li><a href="../Store/homepage.html">Home </a></li>
                     <li><a href="">About Us</a></li>
-                    <li><a href="../Items/items.html">Products</a></li>
+                    <li><a href="../Items/item.html">Products</a></li>
                 </ul>
             </nav>
         </div>
