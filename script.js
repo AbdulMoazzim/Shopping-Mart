@@ -141,14 +141,14 @@ let acc1 = document.querySelector("#accSign");
 acc1.addEventListener("click", listener1);
 
 function condition() {
-  let storage = localStorage;
-  for (let i = 0; i < storage.length;i++){
-      var key = storage.key(i);
-      let parsing = JSON.parse(storage.getItem(key));
-      if (parsing.condition == true) {
-          parsing.condition = false;
-          parsing.product = [];
-      }
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    let parsing = JSON.parse(localStorage.getItem(key));
+    if (parsing.condition === true) {
+      parsing.condition = false;
+      parsing.product = [];
+      localStorage.setItem(key, JSON.stringify(parsing));
+    }
   }
 }
 

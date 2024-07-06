@@ -23,14 +23,14 @@ th {
     justify-content: space-between;
     align-items: center;
 }
-.btn {
+#check {
     background-color: #5cb85c;
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
 }
-.btn:hover {
+#check:hover {
     background-color: #4cae4c;
 }
 .quant {

@@ -56,10 +56,8 @@ let products = [["Cargo Pants",{image: "cargopants/grey.jfif", type: "Grey Cargo
 ],
 ]
 
-
-let links = document.body.querySelectorAll('.products')
-Array.from(links).forEach((val,index)=> {
-    val.addEventListener('click', ()=> {
+class Products {
+    displayProducts(val,index) {
         document.body.querySelector('.heading').innerHTML = val.innerHTML;
         document.body.querySelector('.content').innerHTML = '';
         for (let i = 1; i < products[index].length; i ++) {
@@ -77,7 +75,33 @@ Array.from(links).forEach((val,index)=> {
         </div>`;
             document.body.querySelector('.content').insertAdjacentHTML('beforeend',html);
         }
-        addProducts();
+        prod.addProducts();
+    }
+    addProducts(){
+        let btn = document.body.querySelectorAll('.btn');
+        Array.from(btn).forEach((val, index) => {
+          val.addEventListener('click', () => {
+            let array = currentLogged();
+            if (array.parsing) {
+              for (let i = 0; i < products.length; i++) {
+                if (document.querySelector(".heading").innerHTML === products[i][0]) {
+                  array.parsing.product.push(products[i][index + 1]);
+                  localStorage.setItem(array.key, JSON.stringify(array.parsing));
+                  document.querySelector("#Quantity").innerHTML = array.parsing.product.length
+                  break;
+                }
+              }
+            }
+          });
+        });
+    }
+}
+let prod = new Products();
+
+let links = document.body.querySelectorAll('.products')
+Array.from(links).forEach((val,index)=> {
+    val.addEventListener('click', ()=> {
+        prod.displayProducts(val,index);
     })
 })
 
@@ -86,6 +110,9 @@ let checkout = document.body.querySelector('#cart');
 checkout.addEventListener('click', ()=>{
     window.location.href = "../checkout/checkout.html"
 })
+
+prod.addProducts();
+
 function currentLogged() {
     let storage = localStorage;
     for (let i = 0; i < storage.length;i++){
@@ -97,27 +124,6 @@ function currentLogged() {
     }
     return null;
 }
-function addProducts(){
-    let btn = document.body.querySelectorAll('.btn');
-    Array.from(btn).forEach((val, index) => {
-      val.addEventListener('click', () => {
-        let array = currentLogged();
-        if (array.parsing) {
-          for (let i = 0; i < products.length; i++) {
-            if (document.querySelector(".heading").innerHTML === products[i][0]) {
-              array.parsing.product.push(products[i][index + 1]);
-              localStorage.setItem(array.key, JSON.stringify(array.parsing));
-              document.querySelector("#Quantity").innerHTML = array.parsing.product.length
-              break;
-            }
-          }
-        }
-      });
-    });
-}
-
-addProducts();
-
 let cartsItem = currentLogged();
 if (cartsItem.parsing != undefined) {
     document.querySelector("#Quantity").innerHTML = cartsItem.parsing.product.length;

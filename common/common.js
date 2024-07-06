@@ -6,8 +6,9 @@ let header = `<header>
             <nav>
                 <ul>
                     <li><a href="../Homepage/homepage.html">Home </a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="../About Us/AboutUs.html">About Us</a></li>
                     <li><a href="../Items/item.html">Products</a></li>
+                    <li><a href="../index.html">Log Out</a></li>
                 </ul>
             </nav>
         </div>
@@ -20,8 +21,9 @@ let header = `<header>
             <nav>
                 <ul>
                     <li><a href="../Homepage/homepage.html">Home </a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="../About Us/AboutUs.html">About Us</a></li>
                     <li><a href="../Items/item.html">Products</a></li>
+                    <li><a href="../index.html">Log Out</a></li>
                 </ul>
             </nav>
         </div>

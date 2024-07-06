@@ -33,16 +33,19 @@ header{
 #header_border {
     border-bottom: 2px solid rgb(177, 177, 177);
 }
+
+.nav nav ul {
+    justify-content: space-around;
+}
 .nav nav ul, .transist nav ul{
     display: flex;
     color: black;
-    justify-content: space-around;
 }
 .nav nav ul{
-    width: 30vw;
+    width: 40vw;
 }
 .transist nav ul{
-    width: 60vw;
+    width: 100vw;
 }
 .nav nav ul li,.transist nav ul li {
     list-style: none;
