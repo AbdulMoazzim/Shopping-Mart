@@ -127,7 +127,7 @@ function listener2() {
     ) {
       parse2.condition = true;
       localStorage.setItem(key, JSON.stringify(parse2));
-      window.location.href = 'Store/homepage.html';
+      window.location.href = 'Homepage/homepage.html';
       return;
     }
   }
