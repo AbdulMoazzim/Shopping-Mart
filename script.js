@@ -139,3 +139,17 @@ function listener2() {
 
 let acc1 = document.querySelector("#accSign");
 acc1.addEventListener("click", listener1);
+
+function condition() {
+  let storage = localStorage;
+  for (let i = 0; i < storage.length;i++){
+      var key = storage.key(i);
+      let parsing = JSON.parse(storage.getItem(key));
+      if (parsing.condition == true) {
+          parsing.condition = false;
+          parsing.product = [];
+      }
+  }
+}
+
+condition();
