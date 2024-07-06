@@ -134,12 +134,6 @@ main {
     font-size: 24px;
     color: goldenrod
 }
-footer {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
 
 @media screen and (max-width: 1300px){ 
     .home1 img,.home3 img {
