@@ -15,13 +15,16 @@ class History {
     let arrayA = currentLogged();
     if (arrayA !== null) {
       document.querySelector("#p").innerHTML += arrayA.parsing.Name;
-      
-      let uniqueProducts = [];
+
       for (let i = 0; i < arrayA.parsing.history.length; i++) {
+        let uniqueProducts = [];
         for (let k = 0; k < arrayA.parsing.history[i].products.length; k++) {
           let found = false;
           for (let j = 0; j < uniqueProducts.length; j++) {
-            if (arrayA.parsing.history[i].products[k].type === uniqueProducts[j].type) {
+            if (
+              arrayA.parsing.history[i].products[k].type ===
+              uniqueProducts[j].type
+            ) {
               found = true;
               break;
             }
@@ -30,21 +33,19 @@ class History {
             uniqueProducts.push(arrayA.parsing.history[i].products[k]);
           }
         }
-      }
 
-      let quant = new Array(uniqueProducts.length).fill(0);
-      for (let i = 0; i < uniqueProducts.length; i++) {
-        for (let j = 0; j < arrayA.parsing.history.length; j++) {
-          for (let k = 0; k < arrayA.parsing.history[j].products.length; k++) {
-            if (uniqueProducts[i].type === arrayA.parsing.history[j].products[k].type) {
-              quant[i]++;
+        var quant = new Array(uniqueProducts.length).fill(0);
+        for (let j = 0; j < uniqueProducts.length; j++) {
+          for (let k = 0; k < arrayA.parsing.history[i].products.length; k++) {
+            if (
+              uniqueProducts[j].type ===
+              arrayA.parsing.history[i].products[k].type
+            ) {
+              quant[j]++;
             }
           }
         }
-      }
-
-      for (let i = 0; i < arrayA.parsing.history.length; i++) {
-        let productDetails = '';
+        let productDetails = "";
         for (let j = 0; j < uniqueProducts.length; j++) {
           productDetails += `${uniqueProducts[j].type} : ${quant[j]}\n`;
         }
@@ -56,7 +57,9 @@ class History {
           <td>${arrayA.parsing.history[i].day}</td>
           <td>${productDetails}</td>
         </tr>`;
-        document.querySelector("#cart-items").insertAdjacentHTML("beforeend", html);
+        document
+          .querySelector("#cart-items")
+          .insertAdjacentHTML("beforeend", html);
       }
     }
   }
