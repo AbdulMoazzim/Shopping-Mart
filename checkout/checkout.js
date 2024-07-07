@@ -27,7 +27,7 @@ class Cart {
             let html = `<tr>
             <td id="type${i}">${uniqueProducts[i].type}</td>
             <td>Rs. ${uniqueProducts[i].price}</td>
-            <td class="quant">${count}</td>
+            <td>${count}</td>
             <td><span class="material-symbols-outlined bin">delete</span></td>
             </tr>`;
             document.querySelector("#cart-items").insertAdjacentHTML("beforeend", html);

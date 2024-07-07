@@ -15,6 +15,7 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 th {
+    text-align: left;
     background-color: #f4f4f4;
 }
 .total {
@@ -32,9 +33,6 @@ th {
 }
 #check:hover {
     background-color: #4cae4c;
-}
-.quant {
-    padding-left: 110px;
 }
 .bin {
     cursor: pointer;
