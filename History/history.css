@@ -5,6 +5,9 @@
 th {
     text-align: left;
 }
+#prods {
+    text-align: center;
+}
 @media screen and (max-width: 500px){
     th, td {
         font-size: 12px;
